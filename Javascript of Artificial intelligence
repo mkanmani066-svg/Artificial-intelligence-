@@ -1,0 +1,55 @@
+const chatBox = document.getElementById('chat-box');
+const userInput = document.getElementById('user-input');
+const sendBtn = document.getElementById('send-btn');
+
+// Simple chatbot responses
+const responses = {
+    'hello': 'Hi! How can I assist you today?',
+    'how are you': 'I\'m doing great, thanks for asking!',
+    'what is your purpose': 'I\'m here to help answer any questions you may have.',
+    'default': 'Sorry, I didn\'t understand that. Can you please rephrase?'
+};
+
+sendBtn.addEventListener('click', () => {
+    const userMessage = userInput.value.trim();
+    if (userMessage) {
+                               
+        const userDiv = document.createElement('// Display user message
+        const userDiv = document.createElement('div');
+        userDiv.classList.add('message');
+        userDiv.innerText = `You: ${userMessage}`;
+        chatBox.appendChild(userDiv);
+
+                               
+        const response = getResponse(userMessage);
+
+                                   
+        const botDiv = document.createElement('// Get chatbot response
+        const response = getResponse(userMessage);
+
+        // Display chatbot response
+        const botDiv = document.createElement('div');
+        botDiv.classList.add('message');
+        botDiv.innerText = `Bot: ${response}`;
+        chatBox.appendChild(botDiv);
+
+                           
+        userInput.value = '// Clear user input
+        userInput.value = '';
+
+                                       
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+});
+
+function getResponse(message) {
+    message = message.toLowerCase();
+    return responses[message] || responses['// Scroll to bottom of chat box
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+});
+
+function getResponse(message) {
+    message = message.toLowerCase();
+    return responses[message] || responses['default'];
+}
